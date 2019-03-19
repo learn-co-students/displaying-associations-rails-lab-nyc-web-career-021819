@@ -1,11 +1,12 @@
 class SongsController < ApplicationController
   def index
-  end
-
-  def show
+    @songs = Song.all
+    render :index
   end
 
   def new
+    @song = Song.new
+    render :new
   end
 
   def create
@@ -18,8 +19,14 @@ class SongsController < ApplicationController
     end
   end
 
+  def show
+  @song = Song.find(params[:id])
+    render :show
+  end
+
   def edit
     @song = Song.find(params[:id])
+    render :edit
   end
 
   def update
@@ -47,4 +54,3 @@ class SongsController < ApplicationController
     params.require(:song).permit(:title)
   end
 end
-
