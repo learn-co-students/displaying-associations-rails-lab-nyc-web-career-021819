@@ -1,0 +1,4 @@
+<h1>My Songs</h1>
+<% @songs.each do |song| %>
+<%= link_to song.artist_name.concat(" - ").concat(song.title), song_path(song) %>
+<% end %>
