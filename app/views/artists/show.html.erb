@@ -1,0 +1,9 @@
+<h1>This is the page for the artist <%=@artist.name%></h1>
+
+<h3><%=pluralize(@artist.songs.count, 'song')%> </h3>
+<ul>
+<%@artist.songs.each do |song|%>
+
+<li><%=link_to song.title, song%></li>
+<%end%>
+</ul
