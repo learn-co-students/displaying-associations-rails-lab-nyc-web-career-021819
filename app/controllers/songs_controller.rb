@@ -1,11 +1,17 @@
 class SongsController < ApplicationController
   def index
+    @songs = Song.all
+    @hi = @songs.map do |song|
+        "#{song.artist_name} - #{song.title}"
+    end
   end
 
   def show
+    @song = Song.find(params[:id])
   end
 
   def new
+    @song = Song.new
   end
 
   def create
