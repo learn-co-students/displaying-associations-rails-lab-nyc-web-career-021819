@@ -1,0 +1,6 @@
+<label>Song Title</label>
+<ul>
+<%= @song.title %><br>
+<label>Arist Name:</label>
+<%= link_to @song.artist.name, artist_path(@song.artist) %>
+</ul>
