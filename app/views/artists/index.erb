@@ -1,7 +1,7 @@
 <h1>Artists & Songs:</h1>
 <% @artists.each do |artist| %>
   <%= artist.name %><br>
-  <label>Number of Songs:</label><%= artist.song_count %>
+  <label>Number of Songs:</label>
   <%= pluralize(artist.songs.count, 'song') %></h3><br>
   <label>Songs:</label>
   <% artist.songs.each do |song| %>
